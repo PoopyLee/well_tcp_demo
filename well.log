@@ -1,0 +1,6 @@
+2022-03-30 11:28:27 INFO [Add ServerRouter Success!]
+2022-03-30 11:28:27 INFO [Add ConnRouter Success!]
+2022-03-30 11:28:27 INFO [The Server Name: Well_TCP The Server Version: 1.1.2 And Now Server is Running!]
+2022-03-30 11:28:27 INFO [This is Onstart]
+2022-03-30 11:28:27 INFO [root:root@tcp(127.0.0.1:3306)/test?charset=utf8&parseTime=True&loc=Local]
+2022-03-30 11:28:27 INFO [0xc0001da1a0 test DataBase Connect Success]
