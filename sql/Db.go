@@ -4,7 +4,7 @@ import (
 	"github.com/go-redis/redis"
 	"github.com/jinzhu/gorm"
 	"github.com/lvwei25/well_tcp/log"
-	"well_tcp_demo/config"
+	"github.com/lvwei25/well_tcp_demo/config"
 )
 
 var Db *gorm.DB
