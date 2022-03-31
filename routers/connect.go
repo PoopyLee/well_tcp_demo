@@ -11,8 +11,4 @@ type ConnectRouter struct {
 
 func (this *ConnectRouter) OnConnect(conn *net.WellConnection) {
 	log.NewLoger().Info(conn.IpAddr+":"+conn.Port, "Login")
-	//s:=models.PrintAll()
-	//for _,v:=range s{
-	//	conn.WriteString(fmt.Sprintf("%d->%s",v.ID,v.Name)+"\r\n")
-	//}
 }

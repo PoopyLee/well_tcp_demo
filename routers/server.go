@@ -11,6 +11,7 @@ type ServerRouter struct {
 
 func (this *ServerRouter) OnStart() {
 	log.NewLoger().Info("This is Onstart")
+	//sql.RedisConnect()
 	//sql.Connect()
 	//sql.Db.AutoMigrate(&models.Default{})
 }

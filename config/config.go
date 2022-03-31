@@ -13,6 +13,7 @@ var conf Config
 type Config struct {
 	Base  baseConfig  `json:"base"`
 	Mysql mysqlConfig `json:"mysql"`
+	Redis redisConfig `json:"redis"`
 }
 
 type baseConfig struct {
@@ -30,17 +31,27 @@ type mysqlConfig struct {
 	Charset  string `json:"charset"`  //编码
 }
 
+type redisConfig struct {
+	Password string `json:"password"` //数据库密码
+	IpAddr   string `json:"ip_addr"`  //数据库IP地址
+	Port     string `json:"port"`     //数据库端口
+}
+
 func init() {
-	os.Mkdir("conf", 755)
-	file, err := os.Open("conf/config.json")
-	if err != nil {
-		os.Mkdir("conf", 755)
-		file, _ = os.Create("conf/config.json")
-		log.NewLoger().Error(err)
-	}
-	defer file.Close()
+	//os.Mkdir("conf", 755)
+	//file, err := os.Open("conf/config.json")
+	//if err != nil {
+	//	os.Mkdir("conf", 755)
+	//	file, _ = os.Create("conf/config.json")
+	//	log.NewLoger().Error(err)
+	//
+	//}
+	//defer file.Close()
+
 	data, err := ioutil.ReadFile("conf/config.json")
 	if err != nil {
+		os.Mkdir("conf", 755)
+		os.Create("conf/config.json")
 		log.NewLoger().Error(err)
 		return
 	}
@@ -62,9 +73,16 @@ func init() {
 		config.Mysql.Password = "root"
 		config.Mysql.Database = "test"
 		config.Mysql.Charset = "utf8"
+		//=======================
+		config.Redis.IpAddr = "localhost"
+		config.Redis.Port = "6379"
+		config.Redis.Password = "root"
 		config_s, _ := json.MarshalIndent(config, "", "\t")
-		file.WriteString(string(config_s))
-		file.Sync()
+		err := ioutil.WriteFile("conf/config.json", config_s, 0777)
+		if err != nil {
+			log.NewLoger().Error(err)
+		}
+		return
 	}
 }
 
