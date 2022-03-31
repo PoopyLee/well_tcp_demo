@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/lvwei25/well_tcp/net"
-	config "github.com/lvwei25/well_tcp_demo/config"
-	"github.com/lvwei25/well_tcp_demo/routers"
+	config "well_tcp_demo/config"
+	"well_tcp_demo/routers"
 )
 
 func main() {

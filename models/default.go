@@ -4,8 +4,8 @@ import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"github.com/lvwei25/well_tcp/log"
-	"github.com/lvwei25/well_tcp_demo/sql"
 	"time"
+	"well_tcp_demo/sql"
 )
 
 type Default struct {

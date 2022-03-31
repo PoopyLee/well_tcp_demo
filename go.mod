@@ -1,4 +1,4 @@
-module github.com/lvwei25/well_tcp_demo
+module well_tcp_demo
 
 go 1.16
 
